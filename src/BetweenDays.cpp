@@ -32,7 +32,7 @@ int checkSame(struct node *date1head, struct node *date2head){
 	struct node* temp1 = date1head;
 	struct node* temp2 = date2head;
 	while (temp1){
-		if (temp1->data != date2head->data)
+		if (temp1->data != temp2->data)
 			return -1;
 		temp1 = temp1->next;
 		temp2 = temp2->next;
