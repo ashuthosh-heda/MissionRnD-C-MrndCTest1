@@ -28,7 +28,25 @@ struct node{
 	struct node *next;
 };
 
+int checkSame(struct node *date1head, struct node *date2head){
+	struct node* temp1 = date1head;
+	struct node* temp2 = date2head;
+	while (temp1){
+		if (temp1->data != date2head->data)
+			return -1;
+		temp1 = temp1->next;
+		temp2 = temp2->next;
+	}
+	return 0;
+}
 
 int between_days(struct node *date1head, struct node *date2head){
+	if (date1head == NULL || date2head == NULL)
+		return -1;
+
+	if (checkSame(date1head, date2head) == 0){
+		return 0;
+	}
+	
 	return -1;
 }
